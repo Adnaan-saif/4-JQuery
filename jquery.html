@@ -8,25 +8,9 @@
 
         <style type="text/css">
 
-            #circle {
-
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                background-color: green;
-                margin: 10px;
-
+            #hiddenText {
+                display: none;
             }
-
-            .square {
-
-                width: 150px;
-                height: 150px;
-                background-color: red;
-                margin: 10px;
-
-            }
-
 
         </style>
 
@@ -34,23 +18,33 @@
 
     <body>
 
-        <div id="circle"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <p id="text">This is some text!</p>
+
+        <button id="toogle">Toogle Text</button>
 
         <script type="text/javascript">
+
+            var textShowing = true;
        
-            $("div").click(function() {
+            $("#toogle").click(function() {
 
-                if ($(this).attr("id") == "circle") {
+                if (textShowing) {
 
-                    alert("You clicked on a " + $(this).attr("id"));
+                    $("#text").fadeOut(function() {
+
+                        textShowing = false;
+
+                    });
 
                 } else {
 
-                    alert("You clicked on a square") 
+                    $("#text").fadeIn(function() {
 
-                }             
+                        textShowing = true;
+
+                    });
+
+                }
 
             });
 
