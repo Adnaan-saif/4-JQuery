@@ -8,8 +8,13 @@
 
         <style type="text/css">
 
-            #hiddenText {
-                display: none;
+            #circle {
+
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background-color: green;
+
             }
 
         </style>
@@ -18,35 +23,23 @@
 
     <body>
 
-        <p id="text">This is some text!</p>
-
-        <button id="toogle">Toogle Text</button>
+        <div id="circle"></div>
 
         <script type="text/javascript">
 
-            var textShowing = true;
-       
-            $("#toogle").click(function() {
+            $("#circle").click(function() {
 
-                if (textShowing) {
-
-                    $("#text").fadeOut(function() {
-
-                        textShowing = false;
-
-                    });
-
-                } else {
-
-                    $("#text").fadeIn(function() {
-
-                        textShowing = true;
-
-                    });
-
-                }
+                $(this).animate({
+                    width:"400px",
+                    height:"400px",
+                    marginLeft:"100px",
+                    marginTop:"100px"
+                }, 2000, function() {
+                    $(this).css("background-color", "red");
+                });
 
             });
+
 
         </script>
 
