@@ -2,7 +2,7 @@
 
     <head>
 
-        <title>AJAX</title>
+        <title>jquery</title>
 
         <script type="text/javascript" src="jquery.min.js"></script>   
 
@@ -18,15 +18,11 @@
 
         <script type="text/javascript">
 
-            $.ajax("info.txt").done(function(data) {
+            var regex = /e/g;
+            var string = "Regex is great!";
+            var result = string.match(regex);
 
-                $("p").html(data);
-
-            }).fail(function() {
-
-                alert("Could not get data");
-
-            });
+            alert(result);
 
         </script>
 
