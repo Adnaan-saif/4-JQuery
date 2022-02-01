@@ -18,6 +18,15 @@
 
             }
 
+            .square {
+
+                width: 150px;
+                height: 150px;
+                background-color: red;
+                margin: 10px;
+
+            }
+
 
         </style>
 
@@ -26,20 +35,24 @@
     <body>
 
         <div id="circle"></div>
-
-        <iframe src="https://www.codestars.com/"></iframe>
-
+        <div class="square"></div>
+        <div class="square"></div>
 
         <script type="text/javascript">
        
-            $("#circle").hover(function() {
+            $("div").click(function() {
 
-                $("iframe").attr("src", "https://www.ecowebhosting.co.uk");
+                if ($(this).attr("id") == "circle") {
 
-            })
+                    alert("You clicked on a " + $(this).attr("id"));
 
+                } else {
 
+                    alert("You clicked on a square") 
 
+                }             
+
+            });
 
         </script>
 
