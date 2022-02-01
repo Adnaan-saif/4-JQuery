@@ -2,20 +2,11 @@
 
     <head>
 
-        <title>jQuery</title>
+        <title>AJAX</title>
 
         <script type="text/javascript" src="jquery.min.js"></script>   
 
         <style type="text/css">
-
-            #circle {
-
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                background-color: green;
-
-            }
 
         </style>
 
@@ -23,23 +14,19 @@
 
     <body>
 
-        <div id="circle"></div>
+        <p></p>
 
         <script type="text/javascript">
 
-            $("#circle").click(function() {
+            $.ajax("info.txt").done(function(data) {
 
-                $(this).animate({
-                    width:"400px",
-                    height:"400px",
-                    marginLeft:"100px",
-                    marginTop:"100px"
-                }, 2000, function() {
-                    $(this).css("background-color", "red");
-                });
+                $("p").html(data);
+
+            }).fail(function() {
+
+                alert("Could not get data");
 
             });
-
 
         </script>
 
