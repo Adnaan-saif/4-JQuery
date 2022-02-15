@@ -4,7 +4,10 @@
 
         <title>jquery</title>
 
-        <script type="text/javascript" src="jquery.min.js"></script>   
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
 
         <style type="text/css">
 
@@ -13,16 +16,12 @@
     </head>
 
     <body>
-
-        <p></p>
+ 
+        <div id="draggable">Drag me!</div>
 
         <script type="text/javascript">
-
-            var regex = /e/g;
-            var string = "Regex is great!";
-            var result = string.match(regex);
-
-            alert(result);
+ 
+            $( "#draggable" ).draggable();
 
         </script>
 
